@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
 import { Link } from "react-router-dom";
 
+
 const RestaurantsList = props => {
   const [restaurants, setRestaurants] = useState([]);
   const [searchName, setSearchName ] = useState("");
@@ -85,10 +86,11 @@ const RestaurantsList = props => {
     }
   };
 
+
   return (
-    <div>
+    <div className="container">
       <div className="row pb-1">
-        <div className="input-group col-lg-4">
+        <div className="input-group col-lg-4 mb-2">
           <input
             type="text"
             className="form-control"
@@ -106,7 +108,7 @@ const RestaurantsList = props => {
             </button>
           </div>
         </div>
-        <div className="input-group col-lg-4">
+        <div className="input-group col-lg-4 mb-2">
           <input
             type="text"
             className="form-control"
@@ -124,7 +126,7 @@ const RestaurantsList = props => {
             </button>
           </div>
         </div>
-        <div className="input-group col-lg-4">
+        <div className="input-group col-lg-4 mb-2">
 
           <select onChange={onChangeSearchCuisine}>
              {cuisines.map(cuisine => {
@@ -168,11 +170,8 @@ const RestaurantsList = props => {
             </div>
           );
         })}
-
-
       </div>
     </div>
   );
 };
-
 export default RestaurantsList;

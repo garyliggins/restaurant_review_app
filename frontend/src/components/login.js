@@ -1,12 +1,58 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
-function login() {
+const Login = props => {
+
+  const initialUserState = {
+    name: "",
+    id: "",
+  };
+
+  const [user,setUser] = useState(initialUserState);
+
+  const handleInputChange = event => {
+    const {name, value} = event.target;
+    setUser({...user, [name]: value});
+  };
+
+  const login = () => {
+    props.login(user)
+    props.history.push('/');
+  }
+
   return (
-    <div className="App">
-      Login
-    </div>
+    <div className="submit-form">
+      <div>
+        <div className="form-group">
+        <label htmlFor="user">Username</label>
+      <input
+      className="form-control"
+      id="name"
+      required
+      value={user.name}
+      onChange={handleInputChange}
+      name="name"
+      />
+        </div>
+      
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="id">ID</label>
+        <input
+        type="text"
+        className="form-control"
+        id="id"
+        required
+        value={user.id}
+        onChange={handleInputChange}
+        name="id"
+        />
+      </div>
+
+      <button onClick={login} className="btn btn-success"> Login</button>
+      </div>
   );
 }
 
-export default login;
+export default Login;

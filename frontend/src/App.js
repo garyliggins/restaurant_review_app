@@ -23,7 +23,7 @@ async function logout() {
 
 return (
   <div>
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <nav className="navbar navbar-expand navbar-dark bg-dark p-4 ">
       <a href="/restaurants" className="navbar-brand">
         Restaurant Reviews
       </a>
