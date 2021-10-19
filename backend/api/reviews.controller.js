@@ -1,4 +1,4 @@
-import ReviewsDAO from "../dao/reviewsDAO.js"
+import ReviewsDAO from "../dao/reviewsDao.js"
 
 export default class ReviewsController {
   static async apiPostReview(req, res, next) {
