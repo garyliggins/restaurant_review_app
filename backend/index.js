@@ -9,6 +9,13 @@ const MongoClient = mongodb.MongoClient
 
 const port = process.env.PORT || 5000
 
+// app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/frontend/build', 'index.html'));
+// });
+
+
 MongoClient.connect(
     process.env.RESTREVIEWS_DB_URI,
     {
@@ -25,7 +32,7 @@ MongoClient.connect(
 .then(async client => {
     await restaurantsDAO.injectDB(client)
     await ReviewsDAO.injectDB(client)
-    app.listen(port, () => {
+    app.listen(port || 5000, () => {
         console.log(`listening on port ${port}`)
     })
 })

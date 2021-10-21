@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "https://mern-restaurants-app.herokuapp.com/",
+    baseURL: 'http://localhost:5000/api/v1/restaurants/',
     headers: {
         'Content-type': 'application/json'
     }
@@ -9,4 +9,7 @@ export default axios.create({
 
 
 
-// 'http://localhost:5000/api/v1/restaurants'
+// 
+
+
+// http://localhost:5000/api/v1/restaurants
